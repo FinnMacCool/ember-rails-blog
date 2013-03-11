@@ -1,4 +1,5 @@
 class AuthenticationsController < ApplicationController
+  layout "devise"
   def test
   end
 
