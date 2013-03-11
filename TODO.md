@@ -8,8 +8,8 @@
 - [x] Post/Comment
 - [ ] Post/Comment/Like
 - [ ] Post/Comment/Gravatars
-- [ ] Tag (for Posts)
-- [ ] User
+- [x] Tag (for Posts)
+- [x] User
 - [ ] Role
 - [ ] Role_User (?)
 
@@ -38,11 +38,11 @@
 - [ ] phantomjs
 - [ ] eventmachine
 - [ ] i18n-js
-- [ ] gem "omniauth"
-- [ ] gem "omniauth-openid"
+- [x] gem "omniauth"
+- [x] gem "omniauth-openid"
 - [ ] gem "openid-redis-store"
-- [ ] gem "omniauth-facebook"
-- [ ] gem "omniauth-twitter"
+- [x] gem "omniauth-facebook"
+- [x] gem "omniauth-twitter"
 
 ## Later
 - [ ] redis
