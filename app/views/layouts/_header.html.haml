@@ -1,0 +1,22 @@
+%header.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %nav
+        %ul.nav.pull-left
+          %li= link_to "Home", root_path
+          %li.divider-vertical
+          %li= link_to t(".posts"), posts_path
+          %li.divider-vertical
+          %li= link_to t(".about"), "/#/about"
+        %ul.nav.pull-right
+          - if user_signed_in?
+            %li
+              %p.navbar-text= "#{t ".signed_in"} #{current_user.name}."
+            %li.divider-vertical
+            %li= link_to t(".profile"), edit_user_registration_path
+            %li.divider-vertical
+            %li= link_to t(".sign_out"), destroy_user_session_path, :method => :delete
+          - else
+            %li= link_to t(".sign_in"), new_user_session_path
+            %li.divider-vertical
+            %li= link_to t(".sign_up"), new_user_registration_path
