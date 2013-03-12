@@ -1,0 +1,120 @@
+de:
+  errors:
+    messages:
+      expired: "ist nicht mehr gültig, bitte neu anfordern"
+      not_found: "nicht gefunden"
+      already_confirmed: "ist bereits aktiviert. Bitte versuchen Sie sich anzumelden."
+      not_locked: "war nicht gesperrt"
+      not_saved: "%{count} Fehler:"
+
+  devise:
+    failure:
+      already_authenticated: "Sie sind bereits angemeldet."
+      unauthenticated: "Sie müssen sich anmelden oder registrieren bevor es weitergeht."
+      unconfirmed: "Sie müssen Ihren Account erst noch aktivieren bevor es weitergeht."
+      locked: "Ihr Account ist gesperrt"
+      invalid: "Passwort oder E-Mail-Adresse ungültig"
+      invalid_token: "Authentifizierungsoken ungültig"
+      timeout: "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an."
+      inactive: "Ihr Account ist noch nicht aktiviert worden."
+    sessions:
+      signed_in: "Erfolgreich angemeldet"
+      signed_out: "Erfolgreich abgemeldet"
+      new:
+        headline: "Anmeldung"
+        remember_me: "Angemeldet bleiben"
+        sign_in: "Anmelden"
+    passwords:
+      send_instructions: "Sie erhalten in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen
+                          Ihres Passworts"
+      updated: "Ihr Passwort wurde erfolgreich geändert. Sie sind jetzt angemeldet."
+      updated_not_active: "Ihr Passwort wurde erfolgreich geändert."
+      send_paranoid_instructions: "Falls Ihre E-Mail-Adresse in unserer Datenbank enthalten ist,
+                                  erhalten Sie bald eine E-Mail mit einem Link zur
+                                  Passwortwiederherstellung."
+      new:
+        headline: "Passwort vergessen?"
+        send_password_reset: "Anweisungen zum Reset des Passworts anfordern"
+      edit:
+        headline: "Passwort ändern"
+        new_password: "Neues Passwort"
+        new_confirmation: "Neues Passwort bestätigen"
+        change_password: "Passwort ändern"
+    confirmations:
+      confirmed: "Ihr Account wurde erfolgreich aktiviert. Sie sind jetzt angemeldet."
+      send_instructions: "Sie erhalten in Kürze eine E-Mail mit Anweisungen zur Aktivierung Ihres
+                          Accounts"
+      send_paranoid_instructions: "Falls Ihre E-Mail-Adresse in unserer Datenbank enthalten ist,
+                                    erhalten Sie in Kürze eine E-Mail mit Anweisungen zur Aktivierung
+                                    Ihres Accounts."
+      new:
+        headline: "Anweisungen zur Aktivierung erneut zusenden"
+        resend: "Anweisungen zusenden"
+    links:
+      sign_in: "Anmelden"
+      sign_up: "Registrieren"
+      forgot_password: "Passwort vergessen?"
+      no_confirmation_instructions: "Sie haben keine Anweisungen zur Aktivierung Ihres Accounts erhalten?"
+      no_unlock_instructions: "Sie haben keine Anweisungen zum Entsperren Ihres Accounts erhalten?"
+    registrations:
+      signed_up: "Willkommen! Sie haben sich erfolgreich registriert."
+      signed_up_but_unconfirmed: "Eine Mail mit einem Aktivierungslink wurde an die von Ihnen angegebene
+                                  E-Mail-Adresse versandt. Bitte folgen Sie dem Link, um Ihren Account
+                                  zu aktivieren."
+      signed_up_but_inactive: "Sie haben sich erfolgreich registriert. Eine Anmeldung ist jedoch erst
+                                möglich nachdem Ihr Account aktiviert worden ist."
+      signed_up_but_locked: "Sie haben sich erfolgreich registriert. Eine Anmeldung ist jedoch gerade
+                              nicht möglich, da Ihr Account gesperrt ist."
+      updated: "Sie haben Ihr Profil erfolgreich aktualisiert."
+      update_needs_confirmation: "Sie haben Ihr Profil erfolgreich aktualisiert, aber Ihre neue
+                                  E-Mail-Adresse muss noch verifiziert werden. Bitte klicken Sie auf
+                                  den Aktivierungslink in der Ihnen zugesandten E-Mail, um die Änderung
+                                  Ihrer E-Mail-Adresse abzuschließen."
+      destroyed: "Auf Wiedersehen! Ihr Account wurde erfolgreich gelöscht."
+      new:
+        headline: "Registrierung"
+        submit: "Registrieren"
+      edit:
+        headline: "Profil bearbeiten"
+        password: "Neues Passwort"
+        leave_blank: "(leer lassen, falls Sie es nicht ändern möchten)"
+        current_password: "Aktuelles Passwort"
+        password_needed: "(zur Bestätigung von Änderungen erforderlich)"
+        submit: "Änderungen speichern"
+        cancel_headline: "Account löschen"
+        unhappy: "Unzufrieden?"
+        cancel: "Meinen Account löschen."
+        confirm: "Sind Sie sicher?"
+        back: "Zurück"
+    unlocks:
+      send_instructions: "Sie erhalten in Kürze eine E-Mail mit Anweisungen zur Enstperrung Ihres
+                          Accounts."
+      unlocked: "Ihr Account wurde erfolgreich entsperrt. Bitte melden Sie sich an, um fortzufahren."
+      send_paranoid_instructions: Falls Ihr Account existiert, erhalten Sie in Kürze eine E-Mail mit
+                                    Anweisungen zu seiner Enstperrung."
+      new:
+        headline: "Anweisungen zum Entsperren erneut zusenden"
+        resend: "Anweisungen erneut zusenden"
+    omniauth_callbacks:
+      success: "Autorisierung über %{kind} erfolgreich."
+      failure: "Autorisierung über %{kind} fehlgeschlagen: %{reason}."
+    mailer:
+      confirmation_instructions:
+        subject: "Anweisungen zur Aktivierung"
+        greeting: "Hallo"
+        text: "Sie können Ihren Account über den folgenden Link aktivieren:"
+        confirm: "Meinen Account aktivieren"
+      reset_password_instructions:
+        subject: "Anweisungen zum Zurücksetzen Ihres Passworts"
+        greeting: "Hallo"
+        line_1: "Jemand hat einen Link zur Änderung Ihres Passworts angefordert. Sie können dies über
+                  den folgenden Link tun:"
+        line_2: "Falls Sie den Link nicht angefordert haben, ignorieren Sie diese E-Mail bitte."
+        line_3: "Ihr Passwort ändert sich nicht bis Sie auf obigen Link klicken und ein neues angeben."
+        change: "Passwort ändern"
+      unlock_instructions:
+        subject: "Anweisungen zum Entsperren Ihres Accounts"
+        greeting: "Hallo"
+        line_1: "Ihr Account ist auf Grund einer hohen Zahl fehlgeschlagener Anmeldungen gesperrt worden."
+        line_2: "Klicken Sie auf den folgenden Link, um Ihren Account zu entsperren:"
+        unlock: "Account entsperren"
