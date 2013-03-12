@@ -1,0 +1,18 @@
+de:
+  back: "Zurück"
+  continue: "Weiter"
+  delete: "Löschen"
+  edit: "Bearbeiten"
+  error: "Fehler"
+  finish: "Fertigstellen"
+  page_not_found: "Seite nicht gefunden"
+  show: "Anzeigen"
+  layouts:
+    header:
+      profile: "Profil"
+      posts: "Artikel"
+      signed_in: "Angemeldet als"
+      signed_up: "Willkommen! Sie haben sich erfolgreich angemeldet."
+      sign_in: "Anmelden"
+      sign_out: "Abmelden"
+      sign_up: "Registrieren"
