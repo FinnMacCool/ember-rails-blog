@@ -1,0 +1,28 @@
+<div class="navbar-inner">
+  <div class="container">
+    <nav>
+      <ul class="nav pull-left">
+        <li>{{#linkTo "index"}}Home{{/linkTo}}</li>
+        <li class="divider-vertical"/>
+        <li>{{#linkTo "posts"}}Posts{{/linkTo}}</li>
+        <li class="divider-vertical"/>
+        <li>{{#linkTo "about"}}About{{/linkTo}}</li>
+      </ul>
+      <ul class="nav pull-right">
+        {{#if currentUser.isSignedIn}}
+          <li>
+            <p class="navbar-text">Logged in as </p>
+          </li>
+          <li class="divider-vertical"/>
+          <li><a href="/users/edit">Profile</a></li>
+          <li class="divider-vertical"/>
+          <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a></li>
+        {{else}}
+          <li><a href="/users/sign_in">Sign in</a></li>
+          <li class="divider-vertical"/>
+          <li><a href="/users/sign_up">Sign up</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </div>
+</div>
