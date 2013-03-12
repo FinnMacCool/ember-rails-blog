@@ -1,0 +1,15 @@
+!!! 5
+%html
+%head
+  %title EmberBlog
+  = stylesheet_link_tag    "application", :media => "all"
+  = javascript_include_tag "devise"
+  = csrf_meta_tags
+
+%body
+
+  = render 'layouts/header'
+
+  .container
+
+    = yield
