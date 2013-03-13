@@ -11,7 +11,7 @@
       <ul class="nav pull-right">
         {{#if currentUser.isSignedIn}}
           <li>
-            <p class="navbar-text">Logged in as </p>
+            <p class="navbar-text">Logged in as {{currentUser.name}}</p>
           </li>
           <li class="divider-vertical"/>
           <li><a href="/users/edit">Profile</a></li>
