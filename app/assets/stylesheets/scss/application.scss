@@ -77,3 +77,31 @@ body {
   text-align: center;
   margin-bottom: 10px;
 }
+
+/* General Stuff */
+
+.headline {
+  text-align: center;
+}
+
+/* Posts */
+
+.post {
+  margin-bottom: 15px;
+}
+
+.post-header {
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  padding-top: 5px;
+  text-align:  center;
+  .post-title {
+    font-size:  2em;
+  }
+  .post-info {
+    font-size:  0.95em;
+    letter-spacing: -1px;
+  }
+}
