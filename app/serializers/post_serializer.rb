@@ -1,6 +1,7 @@
 class PostSerializer < ActiveModel::Serializer
-  embed :ids, :include => true
 
-  attributes :id, :title, :body, :created_at, :updated_at, :tag_list
-  has_many :comments
+
+  attributes :id, :created_at, :updated_at, :body, :title, :teaser, :tag_list
+  has_many :comments, embed: :ids, :include => true
+  has_one :user, embed: :ids
 end
