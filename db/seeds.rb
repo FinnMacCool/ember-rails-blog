@@ -7,10 +7,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" }])
+
 posts = Post.create([
-    {title: "First", body: "Text of first post"},
-    {title: "Second", body: "Text of second post"},
-    {title: "Third", body: "Text of third post"}
+    { title: "First", body: "Text of first post", teaser: "Text of", user_id: 1 },
+    { title: "Second", body: "Text of second post", teaser: "Text o", user_id: 1 },
+    { title: "Third", body: "Text of third post", teaser: "Text", user_id: 1 },
+    { title: "Fourth", body: "Text of fourth post", teaser: "Tex", user_id: 1 },
+    { title: "Fifth", body: "Text of fifth post", teaser: "Te", user_id: 1 },
+    { title: "Sixth", body: "Text of sixth post", teaser: "T", user_id: 1 }
 ])
 
 comments = Comment.create([
