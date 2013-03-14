@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130314095319) do
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
     t.text     "teaser",     :default => "", :null => false
-    t.integer  "author_id"
+    t.integer  "user_id"
   end
 
   create_table "taggings", :force => true do |t|

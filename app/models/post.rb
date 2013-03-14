@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   attr_protected nil
 
   has_many :comments
-  belongs_to :author, class_name: "User"
+  belongs_to :user
 
   validates_presence_of :body
   validates_length_of :teaser, {maximum: 500}
