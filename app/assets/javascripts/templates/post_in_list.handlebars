@@ -1,2 +1,14 @@
-{{!-- TODO set title for link according to post's title --}}
-{{#linkTo post post}}{{post.title}}{{/linkTo}}
+<div class="post">
+  <div class="post-header">
+    {{!-- TODO set title for link according to post's title --}}
+    <div class="post-title">
+      {{#linkTo post post}}{{post.title}}{{/linkTo}}
+    </div>
+    <div class="post-info">
+      by {{post.user.name}}
+    </div>
+  </div>
+  <div class="post-body">
+    {{post.teaser}} {{#linkTo post post}}[More]{{/linkTo}}
+  </div>
+</div>

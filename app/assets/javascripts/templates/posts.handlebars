@@ -1,8 +1,8 @@
-<h2>Posts {{subtitle}}</h2>
+<h2 class="headline">Posts {{subtitle}}</h2>
 
 <div id="posts">
     {{!--debugger --}}
-    <ul>
+    <ul class="unstyled">
     {{#each post in controller}}
         {{view EmberBlog.PostInListView contentBinding="post"}}
     {{else}}
