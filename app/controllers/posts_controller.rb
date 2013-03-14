@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def minimum_parameter_keys
-    [:title, :body, :tag_list]
+    [:body, :tag_list, :teaser, :title, :user_id]
   end
 
   def min_params
