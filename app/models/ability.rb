@@ -35,7 +35,7 @@ class Ability
         can :manage, Comment, user_id: user.id
         cannot :destroy, Comment
         can :read, :all
-      when "Registered"
+      when "Commentator"
         can :manage, Comment, user_id: user.id
         cannot :destroy, Comment
         can :read, :all
