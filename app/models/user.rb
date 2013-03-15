@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  # Roles
+  ROLES = %w[Commentator Editor Admin]
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,6 +11,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :name, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+
+  after_create :init_role
 
   has_many :authentications
   has_many :posts
@@ -22,5 +27,11 @@ class User < ActiveRecord::Base
 
   def password_required?
     (authentications.empty? || !password.blank?) && super
+  end
+
+  def init_role
+    if role.blank?
+      update_attribute(:role, "Commentator")
+    end
   end
 end
