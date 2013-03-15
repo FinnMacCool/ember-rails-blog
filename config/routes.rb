@@ -11,6 +11,7 @@ EmberBlog::Application.routes.draw do
   constraints format: /json/ do
     resources :posts, defaults: { format: :json }
     resources :comments, defaults: { format: :json }
+    resources :users, only: :show, defaults: { format: :json }
   end
 
   root to: "home#index"
@@ -64,7 +65,7 @@ EmberBlog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  # root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
