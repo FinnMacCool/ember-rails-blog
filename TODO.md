@@ -4,13 +4,13 @@
 
 - [x] Post
   - [ ] include pagination
-- [ ] Post/Like
+- [x] Post/Like
 - [x] Post/Comment
-- [ ] Post/Comment/Like
+- [x] Post/Comment/Like
 - [ ] Post/Comment/Gravatars
 - [x] Tag (for Posts)
 - [x] User
-- [ ] Role
+- [x] Role
 - [ ] Role_User (?)
 
 ## Behaviour
