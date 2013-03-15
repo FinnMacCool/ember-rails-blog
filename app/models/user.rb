@@ -15,8 +15,10 @@ class User < ActiveRecord::Base
   after_create :init_role
 
   has_many :authentications
-  has_many :posts
   has_many :comments
+  has_many :likes
+  has_many :posts
+
   validates_presence_of :name
   validates_uniqueness_of :name
 

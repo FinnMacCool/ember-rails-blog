@@ -3,8 +3,9 @@ class Post < ActiveRecord::Base
   attr_accessible :body, :teaser, :title#, :tag_list
   attr_protected nil
 
-  has_many :comments
   belongs_to :user
+  has_many :comments
+  has_many :likes, as: :likable
 
   validates_presence_of :body
   validates_length_of :teaser, {maximum: 500}
