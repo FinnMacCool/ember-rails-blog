@@ -1,3 +1,4 @@
+<!--
 <form accept-charset="UTF-8">
   <div>
     <label for="post_title">Title</label>
@@ -16,5 +17,44 @@
     <textarea id="post_teaser" name="post[teaser]" cols="50" rows="5" value="" >
     </textarea>
   </div>
-  <div><input name="commit" type="submit" value="Sign up" /></div>
+  <div><input name="commit" type="submit" value="Create Post" /></div>
+</form>
+-->
+
+
+<form accept-charset="UTF-8" {{action save on="submit"}}>
+  <div class="control-group">
+    <label class="control-label" for="title">Title</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="title"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="body">Text</label>
+    <div class="controls">
+      {{ view Ember.TextArea valueBinding="body" rows="10" cols="50"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="teaser">Teaser</label>
+    <div class="controls">
+      {{ view Ember.TextArea valueBinding="teaser" rows="5" cols="50"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="tagList">Tags</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="tagList"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <button class="btn" type="submit">Submit</button>
+      <button class="btn" {{action "cancel"}}>Cancel</button>
+    </div>
+  </div>
 </form>
