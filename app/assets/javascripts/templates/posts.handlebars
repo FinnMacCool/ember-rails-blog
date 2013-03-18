@@ -1,12 +1,1 @@
-<h2 class="headline">Posts {{subtitle}}</h2>
-
-<div id="posts">
-    {{!--debugger --}}
-    <ul class="unstyled">
-    {{#each post in controller}}
-        {{view EmberBlog.PostInListView contentBinding="post"}}
-    {{else}}
-        Sorry, no posts to display
-    {{/each}}
-    </ul>
-</div>
+{{outlet}}
