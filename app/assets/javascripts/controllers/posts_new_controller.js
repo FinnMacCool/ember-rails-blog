@@ -12,8 +12,9 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
     },
 
     save: function() {
-        console.log( "return", this.validate() );
-        if (this.validate()) {
+        this.get('content').set('userId', 1);
+        console.log( "return", this.validate2() );
+        if (this.validate2()) {
             this.transaction.commit();
             this.transaction = null;
         }
@@ -35,6 +36,10 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
         }
     },
 
+    validate2: function() {
+        return true; //validatePresence('title');
+    },
+
     transitionAfterSave: function() {
         if (this.get('content.id')) {
             this.transitionToRoute('posts.index');
@@ -46,11 +51,7 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
         this.transitionToRoute('posts.index');
     },
 
-    addFramework: function() {
-        this.get('content.frameworks').createRecord();
-    },
-
-    removeFramework: function(framework) {
-        framework.deleteRecord();
+    validatePresence: function(attr) {
+        return !(this.get('content').get(attr) === undefined || this.get('content').get(attr) === '');
     }
 });
