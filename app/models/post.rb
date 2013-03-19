@@ -11,4 +11,6 @@ class Post < ActiveRecord::Base
   validates_length_of :teaser, {maximum: 500}
   validates_presence_of :teaser
   validates_presence_of :title
+
+  default_scope order: 'posts.created_at DESC'
 end
