@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   # POST /posts.json
   def create
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(true, *minimum_parameter_keys)
     post = Post.create(min_params)
     if post.save
       render json: post, location: post_path(post), status: :created
@@ -57,6 +57,6 @@ class PostsController < ApplicationController
   end
 
   def min_params
-    params.slice(*minimum_parameter_keys)
+    params[:post].slice(*minimum_parameter_keys)
   end
 end
