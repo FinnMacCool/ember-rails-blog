@@ -1,4 +1,6 @@
 EmberBlog.PostsNewController = Ember.ObjectController.extend({
+    //needs: currentUser,
+
     startEditing: function() {
         this.transaction = this.get('store').transaction();
         this.set('content', this.transaction.createRecord(EmberBlog.Post, {}));
@@ -12,7 +14,11 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
     },
 
     save: function() {
-        this.get('content').set('userId', 1);
+        var content = this.get('content');
+        content.set('userId', 1);  //controllers.currentUser.get('content').id
+        if (content.get('tagList') == null) {
+            content.set('tagList', "");
+        }
         console.log( "return", this.validate2() );
         if (this.validate2()) {
             this.transaction.commit();
@@ -37,7 +43,8 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
     },
 
     validate2: function() {
-        return true; //validatePresence('title');
+        return this.validatePresenceOf('title') && this.validatePresenceOf('body') && this.validatePresenceOf('teaser') &&
+            this.validateLengthOf('teaser', null, 500);
     },
 
     transitionAfterSave: function() {
@@ -51,7 +58,12 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
         this.transitionToRoute('posts.index');
     },
 
-    validatePresence: function(attr) {
+    validatePresenceOf: function(attr) {
         return !(this.get('content').get(attr) === undefined || this.get('content').get(attr) === '');
+    },
+
+    validateLengthOf: function(attr, min, max) {
+        var length = this.get('content').get(attr).length;
+        return (isNaN(min) || length >= min) && (isNaN(max) || length <= max);
     }
 });
