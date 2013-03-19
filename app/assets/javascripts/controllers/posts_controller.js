@@ -1,3 +1,5 @@
 EmberBlog.PostsController = Ember.ArrayController.extend({
-    content: []
+    content: [],
+    sortProperties: ['createdAt'],
+    sortAscending: false
 });
