@@ -1,23 +1,23 @@
 <div class="post" {{bindAttr id="htmlId"}}>
-    <h3>{{title}}</h3>
-    {{createdAt}}
-    <div class="content">{{body}}</div>
-    <div class="taglist">
-        <ul class="inline">
-        Tags:
-        {{#each tag in tagList}}
-            <li>{{#linkTo tagged tag}}{{tag}}{{/linkTo}}</li>
-        {{else}}
-            Keine Tags vorhanden. Hinzufügen?
-        {{/each}}
-        </ul>
-    </div>
-    {{ log this }}
-    <ul class="unstyled">
-        {{#each comment in comments}}
-            <li>{{comment.content}}</li>
-        {{else}}
-            Noch keine Kommentare
-        {{/each}}
+  <h3>{{title}}</h3>
+  {{createdAt}}
+  <div class="content">{{body}}</div>
+  <div class="taglist">
+    <ul class="inline">
+    Tags:
+    {{#each tag in tagList}}
+      <li>{{#linkTo tagged tag}}{{tag}}{{/linkTo}}</li>
+    {{else}}
+      Keine Tags vorhanden. Hinzufügen?
+    {{/each}}
     </ul>
+  </div>
+  {{ log this }}
+  <ul class="unstyled">
+    {{#each comment in comments}}
+      <li>{{comment.content}}</li>
+    {{else}}
+      Noch keine Kommentare
+    {{/each}}
+  </ul>
 </div>
