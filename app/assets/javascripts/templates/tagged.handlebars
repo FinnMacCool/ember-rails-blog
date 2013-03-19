@@ -2,8 +2,8 @@
 
 <div id="posts">
     {{log controller}}
-    <ul>
-    {{#each post in controller}}
+    <ul class="unstyled">
+    {{#each post in postsWithTag}}
         {{view EmberBlog.PostInListView contentBinding="post"}}
     {{else}}
         Sorry, no posts to display
