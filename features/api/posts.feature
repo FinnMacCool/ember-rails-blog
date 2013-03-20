@@ -17,9 +17,9 @@ Feature: Posts API
     Then the response status should be "200"
     And the JSON response should have "$.meta.total" with the text "2"
     And the JSON response should have "$.posts[*]" with a length of 2
-    And the JSON response should have "$..posts[0].title" with the text "One"
-    And the JSON response should have "$..posts[0].body" with the text "Text 1"
-    And the JSON response should have "$..posts[0].teaser" with the text "T1"
+    And the JSON response should have "$..posts[1].title" with the text "One"
+    And the JSON response should have "$..posts[1].body" with the text "Text 1"
+    And the JSON response should have "$..posts[1].teaser" with the text "T1"
     And I pause for a second
 
   Scenario: View action
