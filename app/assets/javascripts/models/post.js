@@ -3,6 +3,9 @@ EmberBlog.Post = DS.Model.extend({
     comments: DS.hasMany('EmberBlog.Comment'),
 
     body: DS.attr('string'),
+    canCreate: DS.attr('boolean'),
+    canDestroy: DS.attr('boolean'),
+    canUpdate: DS.attr('boolean'),
     tagList: DS.attr('raw'),
     teaser: DS.attr('string'),
     title: DS.attr('string'),

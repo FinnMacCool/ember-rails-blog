@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_url
   end
 
+  serialization_scope :current_user
+
   private
 
   def requires_parameters(creating = false, *required)
