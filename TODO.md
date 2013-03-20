@@ -16,7 +16,7 @@
 ## Behaviour
  - [ ] Approve comments
  - [ ] No need to approve comments for known and trusted users
- - [ ] Navigation to Posts with Tag
+ - [x] Navigation to Posts with Tag
  - [ ] Top list of Posts (by comments / views)
 
 ## Technical Deps
