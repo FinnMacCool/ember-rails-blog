@@ -25,7 +25,7 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
             this.transaction = null;
         }
         else {
-            alert('Nome inválido');
+            alert('Invalid Data!');
         }
     },
 
