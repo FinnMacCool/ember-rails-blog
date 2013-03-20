@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource except: [:minimum_parameter_keys, :min_params]
 
   # GET /comments.json
   def index
