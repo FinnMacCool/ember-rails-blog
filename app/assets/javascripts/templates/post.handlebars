@@ -12,6 +12,7 @@
     {{/each}}
     </ul>
   </div>
+  <hr>
   {{ log this }}
   <ul class="unstyled">
     {{#each comment in comments}}
@@ -20,4 +21,21 @@
       Noch keine Kommentare
     {{/each}}
   </ul>
+  <hr>
+  <div class="create-comment">
+    <form accept-charset="UTF-8" {{action save on="submit"}}>
+      <div class="control-group">
+        <label class="control-label" for="contents"><h4>New Comment</h4></label>
+        <div class="controls">
+          {{view Ember.TextArea valueBinding="contents" rows="5" cols="40"}}
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button class="btn" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
