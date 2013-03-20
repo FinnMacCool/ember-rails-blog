@@ -1,0 +1,5 @@
+- flash.each do |key, value|
+  - if value.is_a?(String)
+    .center.alert{:class => "alert-#{(key == :notice || key == :success) ? "success" : "error"}"}
+      %a.close{"data-dismiss" => "alert"} ×
+      %div{:id => "flash_#{key}"}= value
