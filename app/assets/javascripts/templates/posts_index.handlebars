@@ -7,7 +7,7 @@
 <div id="posts">
     {{!--debugger --}}
     <ul class="unstyled">
-    {{#each post in controller}}
+    {{#each post in arrangedContent}}
         {{view EmberBlog.PostInListView contentBinding="post"}}
     {{else}}
         Sorry, no posts to display
