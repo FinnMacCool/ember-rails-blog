@@ -9,14 +9,19 @@
 
 users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" }])
 
-posts = Post.create([
+post_data = [
     { title: "First", body: "Text of first post", teaser: "Text of", user_id: 1 },
     { title: "Second", body: "Text of second post", teaser: "Text o", user_id: 1 },
     { title: "Third", body: "Text of third post", teaser: "Text", user_id: 1 },
     { title: "Fourth", body: "Text of fourth post", teaser: "Tex", user_id: 1 },
     { title: "Fifth", body: "Text of fifth post", teaser: "Te", user_id: 1 },
     { title: "Sixth", body: "Text of sixth post", teaser: "T", user_id: 1 }
-])
+]
+
+post_data.each do |p|
+  Post.create(p)
+  sleep(1)
+end
 
 comments = Comment.create([
     {content: "Ein Kommentar.", post_id: 1},
