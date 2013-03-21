@@ -2,7 +2,7 @@ EmberBlog.Comment = DS.Model.extend({
     post: DS.belongsTo('EmberBlog.Post'),
     user: DS.belongsTo('EmberBlog.User'),
 
-    content: DS.attr('string'),
+    text: DS.attr('string'),
     createdAt: DS.attr('date'),
     postId: DS.attr('number'),
     updatedAt: DS.attr('date'),

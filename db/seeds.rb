@@ -24,10 +24,10 @@ post_data.each do |p|
 end
 
 comments = Comment.create([
-    {content: "Ein Kommentar.", post_id: 1},
-    {content: "Noch einer.", post_id: 1},
-    {content: "Und noch einer.", post_id: 1},
-    {content: "Der hier gehört zum 2. Post.", post_id: 2}
+    {text: "Ein Kommentar.", post_id: 1},
+    {text: "Noch einer.", post_id: 1},
+    {text: "Und noch einer.", post_id: 1},
+    {text: "Der hier gehört zum 2. Post.", post_id: 2}
 ])
 
 tags = ActsAsTaggableOn::Tag.create([{name: "erster Post"}, {name: "langweilig"},

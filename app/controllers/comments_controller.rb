@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
   private
 
   def minimum_parameter_keys
-    [:content, :post_id]
+    [:text, :post_id]
   end
 
   def min_params
