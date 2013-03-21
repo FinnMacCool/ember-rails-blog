@@ -9,8 +9,9 @@ EmberBlog::Application.routes.draw do
   resources :authentications
 
   constraints format: /json/ do
-    resources :posts, defaults: { format: :json }
-    resources :comments, defaults: { format: :json }
+    resources :posts, defaults: { format: :json } do
+      resources :comments, defaults: { format: :json }
+    end
     resources :users, only: :show, defaults: { format: :json }
   end
 
