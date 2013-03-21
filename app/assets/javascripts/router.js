@@ -3,7 +3,9 @@ EmberBlog.Router.map(function() {
     this.resource("posts", function() { // implicit path and template name (same as route name)
         //this.route('index');
         this.route('new');
-        this.resource('post', { path: '/:post_id' });
+        this.resource('post', { path: '/:post_id' }, function() {
+            this.route('edit');
+        });
     });
     //this.route('posts.new', { path: '/posts/new' });
     //this.resource('post', { path: '/posts/:post_id' });
