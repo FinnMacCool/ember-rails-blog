@@ -16,7 +16,7 @@
   {{ log this }}
   <ul class="unstyled">
     {{#each comment in comments}}
-      <li>{{comment.text}}</li>
+      {{view EmberBlog.CommentInListView contentBinding="comment"}}
     {{else}}
       Noch keine Kommentare
     {{/each}}
