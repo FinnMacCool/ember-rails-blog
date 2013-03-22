@@ -49,7 +49,7 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
 
     transitionAfterSave: function() {
         if (this.get('content.id')) {
-            this.transitionToRoute('posts.index');
+            this.transitionToRoute('post.index', this.get('content'));
         }
     }.observes('content.id'),
 
