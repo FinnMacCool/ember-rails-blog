@@ -3,6 +3,7 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
     content: null,
 
     startEditing: function() {
+        this.stopEditing();
         this.transaction = this.get('store').transaction();
         this.transaction.add(this.get('content'));
         Em.Logger.info(this.transaction);
