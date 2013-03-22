@@ -38,10 +38,10 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
     },
 
     transitionAfterSave: function() {
-        if (this.get('content.id')) {
-            //this.transitionToRoute('post.index');
-        }
-    }.observes('content.id'),
+        this.get('content').on('didUpdate', this, function() {
+            this.transitionToRoute('post.index');
+        })
+    }.observes('content.stateManager.currentState.name'),
 
     cancel: function() {
         this.stopEditing();
