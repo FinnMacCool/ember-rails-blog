@@ -44,7 +44,7 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
 
     cancel: function() {
         this.stopEditing();
-        this.transitionToRoute('posts.index');
+        this.transitionToRoute('post.index');
     },
 
     validatePresenceOf: function(attr) {
