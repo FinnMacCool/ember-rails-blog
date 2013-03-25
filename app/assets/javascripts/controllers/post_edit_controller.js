@@ -24,6 +24,9 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         console.log( "return", this.validate() );
         if (this.validate()) {
             Em.Logger.info(this.transaction);
+            content.on('didUpdate', this, function() {
+                this.transitionToRoute('post.index');
+            });
             this.transaction.commit();
             this.transaction = null;
         }
@@ -36,12 +39,6 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         return this.validatePresenceOf('title') && this.validatePresenceOf('body') && this.validatePresenceOf('teaser') &&
             this.validateLengthOf('teaser', null, 500);
     },
-
-    transitionAfterSave: function() {
-        this.get('content').on('didUpdate', this, function() {
-            this.transitionToRoute('post.index');
-        })
-    }.observes('content.stateManager.currentState.name'),
 
     cancel: function() {
         this.stopEditing();
