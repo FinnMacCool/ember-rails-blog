@@ -24,11 +24,18 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         console.log( "return", this.validate() );
         if (this.validate()) {
             Em.Logger.info(this.transaction);
-            content.on('didUpdate', this, function() {
+            if (content.get('isDirty')) {
+                content.on('didUpdate', this, function() {
+                    this.transitionToRoute('post.index');
+                });
+                this.transaction.commit();
+                this.transaction = null;
+            }
+            else {
+                this.transaction.remove(content);
+                this.transaction = null;
                 this.transitionToRoute('post.index');
-            });
-            this.transaction.commit();
-            this.transaction = null;
+            }
         }
         else {
             alert('Invalid Data!');
