@@ -46,11 +46,12 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
     },
 
     validatePresenceOf: function(attr) {
-        return !(this.get('content').get(attr) === undefined || this.get('content').get(attr) === '');
+        var value = this.get('content.' + attr);
+        return !(value === undefined || value === '');
     },
 
     validateLengthOf: function(attr, min, max) {
-        var length = this.get('content').get(attr).length;
+        var length = this.get('content.' + attr).length;
         return (isNaN(min) || length >= min) && (isNaN(max) || length <= max);
     }
 });
