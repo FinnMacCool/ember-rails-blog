@@ -7,7 +7,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" }])
+users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" },
+                     { email: "blubb@bla.com", name: "Blubb", password: "ohfoobar", password_confirmation: "ohfoobar" }])
 
 post_data = [
     { title: "First", body: "Text of first post", teaser: "Text of", user_id: 1 },
