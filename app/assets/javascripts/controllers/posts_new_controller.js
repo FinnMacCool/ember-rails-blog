@@ -1,5 +1,5 @@
 EmberBlog.PostsNewController = Ember.ObjectController.extend({
-    //needs: currentUser,
+    needs: "currentUser",
 
     startEditing: function() {
         this.transaction = this.get('store').transaction();
@@ -15,7 +15,7 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
 
     save: function() {
         var content = this.get('content');
-        content.set('userId', 1);  //this.get('controllers.currentUser.content.id')
+        content.set('userId', this.get('controllers.currentUser.content.id'));
         if (content.get('tagList') == null) {
             content.set('tagList', "");
         }
