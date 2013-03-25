@@ -25,9 +25,7 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         if (this.validate()) {
             Em.Logger.info(this.transaction);
             if (content.get('isDirty')) {
-                content.on('didUpdate', this, function() {
-                    this.transitionToRoute('post.index');
-                });
+                content.on('didUpdate', this, 'transitionAfterSave');
                 this.transaction.commit();
                 this.transaction = null;
             }
@@ -40,6 +38,11 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         else {
             alert('Invalid Data!');
         }
+    },
+
+    transitionAfterSave: function() {
+        this.transitionToRoute('post.index');
+        this.get('content').off('didUpdate', this, 'transitionAfterSave');
     },
 
     validate: function() {
