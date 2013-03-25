@@ -16,7 +16,11 @@ EmberBlog.Post = DS.Model.extend({
 
     htmlId: function() {
         return "post-" + this.get('clientId');
-    }.property('clientId')
+    }.property('clientId'),
+
+    formattedDate: function() {
+        return this.get('createdAt').toDateString();
+    }.property('createdAt')
 });
 
 DS.RESTAdapter.registerTransform('raw', {
