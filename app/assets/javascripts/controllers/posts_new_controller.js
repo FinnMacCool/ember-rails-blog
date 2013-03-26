@@ -23,8 +23,8 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
         else {
             content.set('tagList', []);
         }
-        console.log( "return", this.validate2() );
-        if (this.validate2()) {
+        console.log( "return", this.validate() );
+        if (this.validate()) {
             this.transaction.commit();
             this.transaction = null;
         }
@@ -34,19 +34,6 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
     },
 
     validate: function() {
-        var firstName, regex;
-        regex = /^[A-ZÄÁÀËÉÈÍÌÖÓÒÚÙÑÇa-zäáàëéèíìöóòúùñç][A-ZÄÁÀËÉÈÍÌÖÓÒÚÙÑÇa-zäáàëéèíìöóòúùñç ]{1,70}[A-ZÄÁÀËÉÈÍÌÖÓÒÚÙÑÇa-zäáàëéèíìöóòúùñç]$/;
-        firstName = this.get('content').get('firstName');
-        firstNameOk = regex.exec(firstName);
-        if (firstNameOk) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    },
-
-    validate2: function() {
         return this.validatePresenceOf('title') && this.validatePresenceOf('body') && this.validatePresenceOf('teaser') &&
             this.validateLengthOf('teaser', null, 500);
     },
