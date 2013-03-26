@@ -21,7 +21,7 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
         var tagList = content.get('tagList');
         if (tagList) {
             if (typeof tagList == "string") {
-                content.set('tagList', tagList.split(",").map($.trim));
+                content.set('tagList', tagList.split(/\s*,\s*/).filter(function(str) { return str.length > 0 }).uniq());
             }
         }
         else {
