@@ -9,7 +9,7 @@
     {{#each tag in tagList}}
       <li>{{#linkTo tagged tag}}{{tag}}{{/linkTo}}</li>
     {{else}}
-      Keine Tags vorhanden. Hinzufügen?
+      Keine Tags vorhanden. {{#linkTo "post.edit"}}Hinzufügen?{{/linkTo}}
     {{/each}}
     </ul>
   </div>
