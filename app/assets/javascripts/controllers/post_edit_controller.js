@@ -18,8 +18,14 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
 
     save: function() {
         var content = this.get('content');
-        if (content.get('tagList') == null) {
-            content.set('tagList', "");
+        var tagList = content.get('tagList');
+        if (tagList) {
+            if (typeof tagList == "string") {
+                content.set('tagList', tagList.split(",").map($.trim));
+            }
+        }
+        else {
+            content.set('tagList', []);
         }
         console.log( "return", this.validate() );
         if (this.validate()) {

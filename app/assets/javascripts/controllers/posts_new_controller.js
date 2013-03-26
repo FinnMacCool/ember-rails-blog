@@ -16,8 +16,12 @@ EmberBlog.PostsNewController = Ember.ObjectController.extend({
     save: function() {
         var content = this.get('content');
         content.set('userId', this.get('controllers.currentUser.content.id'));
-        if (content.get('tagList') == null) {
-            content.set('tagList', "");
+        var tagList = content.get('tagList');
+        if (tagList) {
+            content.set('tagList', tagList.split(",").map($.trim));
+        }
+        else {
+            content.set('tagList', []);
         }
         console.log( "return", this.validate2() );
         if (this.validate2()) {
