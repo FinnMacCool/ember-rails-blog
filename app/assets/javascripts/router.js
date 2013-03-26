@@ -7,8 +7,6 @@ EmberBlog.Router.map(function() {
             this.route('edit');
         });
     });
-    //this.route('posts.new', { path: '/posts/new' });
-    //this.resource('post', { path: '/posts/:post_id' });
     this.resource("users", function() {
 
     });
