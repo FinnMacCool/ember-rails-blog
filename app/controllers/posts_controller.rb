@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   # POST /posts.json
   def create
-    requires_parameters(true, *minimum_parameter_keys)
+    requires_parameters(params[:post], *minimum_parameter_keys)
     post = Post.create(min_params)
     if post.save
       render json: post, location: post_path(post), status: :created
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   # PATCH|PUT /posts/1.json
   def update
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(params[:post], *minimum_parameter_keys)
     requires_parameters(*[:id])
     post = Post.find(params[:id])
 

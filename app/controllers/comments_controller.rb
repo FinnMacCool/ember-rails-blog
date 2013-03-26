@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   # POST /comments.json
   def create
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(params[:comment], *minimum_parameter_keys)
     comment = Comment.create(min_params)
     if comment.save
       render json: comment, location: comment_path(comment), status: :created
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 
   # PATCH|PUT /comments/1.json
   def update
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(params[:comment], *minimum_parameter_keys)
     requires_parameters(*[:id])
     comment = Comment.find(params[:id])
 

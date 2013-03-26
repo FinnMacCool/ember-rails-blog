@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   # POST /users.json
   def create
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(params[:user], *minimum_parameter_keys)
     user = User.create(min_params)
     if user.save
       render json: user, location: user_path(user), status: :created
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   # PATCH|PUT /users/1.json
   def update
-    requires_parameters(*minimum_parameter_keys)
+    requires_parameters(params[:user], *minimum_parameter_keys)
     requires_parameters(*[:id])
     user = User.find(params[:id])
 
