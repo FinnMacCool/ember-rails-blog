@@ -1,4 +1,5 @@
 <div class="post" {{bindAttr id="htmlId"}}>
+  {{#linkTo "post.edit"}}Edit{{/linkTo}}
   <h3>{{title}}</h3>
     by {{user.name}} on {{formattedDate}}
   <div class="content">{{body}}</div>
