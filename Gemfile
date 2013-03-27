@@ -22,6 +22,8 @@ gem 'acts-as-taggable-on', '~> 2.3.1'
 
 gem 'devise', '2.2.3'
 
+gem "faker", "~> 1.1.2"
+
 # OmniAuth
 gem 'omniauth'
 gem 'omniauth-facebook'
