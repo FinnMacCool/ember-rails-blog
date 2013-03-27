@@ -19,7 +19,8 @@ EmberBlog.Post = DS.Model.extend({
     }.property('clientId'),
 
     formattedDate: function() {
-        return this.get('createdAt').toDateString();
+        var d = this.get('createdAt').toDateString();
+        return moment(d).format('MMMM D, YYYY');
     }.property('createdAt')
 });
 
