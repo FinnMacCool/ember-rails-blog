@@ -11,12 +11,12 @@ users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar"
                      { email: "blubb@bla.com", name: "Blubb", password: "ohfoobar", password_confirmation: "ohfoobar" }])
 
 post_data = [
-    { title: "First", body: "Text of first post", teaser: "Text of", user_id: 1 },
-    { title: "Second", body: "Text of second post", teaser: "Text o", user_id: 1 },
-    { title: "Third", body: "Text of third post", teaser: "Text", user_id: 1 },
-    { title: "Fourth", body: "Text of fourth post", teaser: "Tex", user_id: 1 },
-    { title: "Fifth", body: "Text of fifth post", teaser: "Te", user_id: 1 },
-    { title: "Sixth", body: "Text of sixth post", teaser: "T", user_id: 1 }
+    { title: "First", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Second", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Third", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Fourth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Fifth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Sixth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 }
 ]
 
 post_data.each do |p|
