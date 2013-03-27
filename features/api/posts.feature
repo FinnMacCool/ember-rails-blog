@@ -32,7 +32,7 @@ Feature: Posts API
   Scenario Outline: successful post creation
     When I send a POST request to "/posts" with the following:
       """
-      {"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}
+      {"post":{"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}}
       """
     Then the response status should be "201"
     When I request the newly created resource
@@ -49,7 +49,7 @@ Feature: Posts API
   Scenario Outline: unsuccessful post creation
     When I send a POST request to "/posts" with the following:
       """
-      {"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}
+      {"post":{"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}}
       """
     Then the response status should be "422"
     And the JSON response should have "$.<key>" with a length of 1
@@ -64,7 +64,7 @@ Feature: Posts API
   Scenario Outline: successful post change
     When I send a PUT request to "/posts/<id>" with the following:
       """
-      {"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}
+      {"post":{"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}}
       """
     Then the response status should be "204"
     When I send a GET request to "/posts/<id>"
@@ -81,7 +81,7 @@ Feature: Posts API
   Scenario Outline: unsuccessful post changes
     When I send a PUT request to "/posts/1" with the following:
       """
-      {"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}
+      {"post":{"title":"<title>","body":"<body>","teaser":"<teaser>","tag_list":"<tag_list>","user_id":"<user_id>"}}
       """
     Then the response status should be "422"
     And the JSON response should have "$.<key>" with a length of 1
