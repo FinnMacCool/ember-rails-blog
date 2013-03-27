@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require_self
+//= require moment.js
 // Loads all Bootstrap javascripts
 //= require bootstrap
