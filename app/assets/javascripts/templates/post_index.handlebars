@@ -7,7 +7,7 @@
     <ul class="inline">
     Tags:
     {{#each tag in tagList}}
-      <li>{{#linkTo tagged tag}}{{tag}}{{/linkTo}}</li>
+      <li class="post-tag">{{#linkTo tagged tag}}{{tag}}{{/linkTo}}</li>
     {{else}}
       Keine Tags vorhanden. {{#linkTo "post.edit"}}Hinzufügen?{{/linkTo}}
     {{/each}}
