@@ -24,7 +24,7 @@
   </ul>
   <hr>
   {{#if currentUser.isSignedIn}}
-    {{view EmberBlog.CommentsNewView contentBinding="post"}}
+    {{render 'comments_new'}}
   {{else}}
     Log in to write comments.
   {{/if}}

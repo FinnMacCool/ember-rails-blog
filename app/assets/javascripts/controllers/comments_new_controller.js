@@ -1,5 +1,5 @@
 EmberBlog.CommentsNewController = Ember.ObjectController.extend({
-    needs: "currentUser",
+    needs: ["currentUser", "postIndex"],
 
     startEditing: function() {
         this.transaction = this.get('store').transaction();
@@ -21,10 +21,14 @@ EmberBlog.CommentsNewController = Ember.ObjectController.extend({
     },
 
     save: function() {
-        var content = this.get('content');
-        content.set('userId', this.get('controllers.currentUser.content.id'));
         console.log( "return", this.validate() );
-        if (this.validate()) {
+        if (!this.transaction) {
+            //do nothing
+        }
+        else if (this.validate()) {
+            var content = this.get('content');
+            content.set('userId', this.get('controllers.currentUser.content.id'));
+            content.set('post', this.get('controllers.postIndex.content'));
             this.transaction.commit();
             this.transaction = null;
         }
@@ -39,7 +43,9 @@ EmberBlog.CommentsNewController = Ember.ObjectController.extend({
 
     transitionAfterSave: function() {
         if (this.get('content.id')) {
-            this.transitionToRoute('posts.index');
+            this.transitionToRoute('post.index');
+            this.get('controllers.postIndex.content.comments').update();
+            this.startEditing();
         }
     }.observes('content.id'),
 
