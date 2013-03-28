@@ -54,6 +54,6 @@ class CommentsController < ApplicationController
   end
 
   def min_params
-    params.slice(*minimum_parameter_keys)
+    params[:comment].slice(*minimum_parameter_keys)
   end
 end

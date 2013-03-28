@@ -54,6 +54,6 @@ class UsersController < ApplicationController
   end
 
   def min_params
-    params.slice(*minimum_parameter_keys)
+    params[:user].slice(*minimum_parameter_keys)
   end
 end
