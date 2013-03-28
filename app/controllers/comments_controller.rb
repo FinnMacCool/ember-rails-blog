@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   def create
     requires_parameters(params[:comment], *minimum_parameter_keys)
     comment = Comment.create(min_params)
+    comment.user = current_user if current_user
     if comment.save
       render json: comment, location: comment_path(comment), status: :created
     else
