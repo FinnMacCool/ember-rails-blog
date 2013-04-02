@@ -1,8 +1,10 @@
 EmberBlog.Post = DS.Model.extend({
+    category: DS.belongsTo('EmberBlog.Category'),
     user: DS.belongsTo('EmberBlog.User'),
     comments: DS.hasMany('EmberBlog.Comment'),
 
     body: DS.attr('string'),
+    categoryId: DS.attr('number'),
     canCreate: DS.attr('boolean'),
     canDestroy: DS.attr('boolean'),
     canUpdate: DS.attr('boolean'),
