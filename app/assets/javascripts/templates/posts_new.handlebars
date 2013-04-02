@@ -28,6 +28,13 @@
   </div>
 
   <div class="control-group">
+    <label class="control-label" for="category">Category</label>
+    <div class="controls">
+      {{view Ember.Select contentBinding="controller.categories.content" optionValuePath="content.id" optionLabelPath="content.name" valueBinding="category" prompt="Choose a category"}}
+    </div>
+  </div>
+
+  <div class="control-group">
     <div class="controls">
       <button class="btn" type="submit">Submit</button>
       <button class="btn" {{action "cancel"}}>Cancel</button>
