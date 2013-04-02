@@ -13,13 +13,6 @@ EmberBlog.CommentsNewController = Ember.ObjectController.extend({
         }
     },
 
-    onSave: function(text, post) {
-        var transaction = this.get('store').transaction();
-        transaction.createRecord(EmberBlog.Comment, {text: text, userId: 1, postId: post.id});
-        transaction.commit();
-        transaction = null;
-    },
-
     save: function() {
         console.log( "return", this.validate() );
         if (!this.transaction) {
