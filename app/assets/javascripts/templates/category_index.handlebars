@@ -1,0 +1,11 @@
+{{#linkTo "category.edit"}}Edit{{/linkTo}}
+
+<h2 class="headline">{{name}} ({{postCount}})</h2>
+
+<ul class="unstyled">
+  {{#each post in posts}}
+    {{view EmberBlog.PostInListView contentBinding="post"}}
+  {{else}}
+    Sorry, no posts in this category.
+  {{/each}}
+</ul>

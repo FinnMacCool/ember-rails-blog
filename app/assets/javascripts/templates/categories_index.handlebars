@@ -1,0 +1,16 @@
+<h2 class="headline">Categories</h2>
+
+<div>
+  {{#linkTo 'categories.new'}}Create a category{{/linkTo}}
+</div>
+
+<div id="categories">
+    {{!--debugger --}}
+    <ul class="unstyled">
+    {{#each category in arrangedContent}}
+        {{view EmberBlog.CategoryInListView contentBinding="category"}}
+    {{else}}
+        Sorry, no categories to display
+    {{/each}}
+    </ul>
+</div>
