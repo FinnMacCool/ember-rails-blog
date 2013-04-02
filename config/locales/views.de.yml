@@ -9,6 +9,7 @@ de:
   show: "Anzeigen"
   layouts:
     header:
+      categories: "Kategorien"
       profile: "Profil"
       posts: "Artikel"
       signed_in: "Angemeldet als"

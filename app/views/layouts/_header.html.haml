@@ -5,6 +5,8 @@
         %ul.nav.pull-left
           %li= link_to "Home", root_path
           %li.divider-vertical
+          %li= link_to t(".categories"), "/#" + categories_path
+          %li.divider-vertical
           %li= link_to t(".posts"), "/#" + posts_path
           %li.divider-vertical
           %li= link_to t(".about"), "/#/about"
