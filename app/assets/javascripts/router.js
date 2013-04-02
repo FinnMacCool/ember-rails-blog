@@ -7,6 +7,12 @@ EmberBlog.Router.map(function() {
             this.route('edit');
         });
     });
+    this.resource("categories", function() {
+        this.route('new');
+        this.resource('category', { path: '/:category_id' }, function() {
+            this.route('edit');
+        });
+    });
     this.resource("users", function() {
 
     });
