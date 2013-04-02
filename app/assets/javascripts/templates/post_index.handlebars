@@ -1,7 +1,7 @@
 <div class="post" {{bindAttr id="htmlId"}}>
   {{#linkTo "post.edit"}}Edit{{/linkTo}}
   <h3>{{title}}</h3>
-    by {{user.name}} on {{formattedDate}}
+    by {{user.name}} on {{formattedDate}} in {{category.name}}
   <div class="content">{{body}}</div>
   <div class="taglist">
     <ul class="inline">
