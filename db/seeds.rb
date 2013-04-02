@@ -10,13 +10,15 @@
 users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" },
                      { email: "blubb@bla.com", name: "Blubb", password: "ohfoobar", password_confirmation: "ohfoobar" }])
 
+categories = Category.create([{ name: "Category 1" }, { name: "Category 2" }, { name: "Category 3" }])
+
 post_data = [
-    { title: "First", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
-    { title: "Second", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
-    { title: "Third", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
-    { title: "Fourth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
-    { title: "Fifth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 },
-    { title: "Sixth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), teaser: Faker::Lorem.sentence(11), user_id: 1 }
+    { title: "First", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 1, teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Second", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 1, teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Third", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 1, teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Fourth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 2, teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Fifth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 2, teaser: Faker::Lorem.sentence(11), user_id: 1 },
+    { title: "Sixth", body: Faker::Lorem.sentence(11) + " " + Faker::Lorem.sentence(12), category_id: 3, teaser: Faker::Lorem.sentence(11), user_id: 1 }
 ]
 
 post_data.each do |p|
