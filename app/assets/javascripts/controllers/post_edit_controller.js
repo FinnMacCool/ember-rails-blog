@@ -1,5 +1,5 @@
 EmberBlog.PostEditController = Ember.ObjectController.extend({
-    //needs: currentUser,
+    needs: "categoriesIndex",
     content: null,
 
     startEditing: function() {

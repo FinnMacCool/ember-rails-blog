@@ -1,5 +1,5 @@
 EmberBlog.PostsNewController = Ember.ObjectController.extend({
-    needs: ["currentUser", "categories"],
+    needs: ["currentUser", "categoriesIndex"],
 
     startEditing: function() {
         this.transaction = this.get('store').transaction();

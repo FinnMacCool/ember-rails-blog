@@ -4,6 +4,7 @@ EmberBlog.PostEditRoute = Ember.Route.extend({
     },
 
     setupController: function(controller) {
+        this.controllerFor('categories.index').set('content', EmberBlog.Category.find());
         controller.startEditing();
     },
 
