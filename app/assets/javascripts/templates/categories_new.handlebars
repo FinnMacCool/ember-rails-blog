@@ -1,0 +1,15 @@
+<form accept-charset="UTF-8" {{action save on="submit"}}>
+  <div class="control-group">
+    <label class="control-label" for="name">Name</label>
+    <div class="controls">
+      {{view Ember.TextField valueBinding="name"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <button class="btn" type="submit">Submit</button>
+      <button class="btn" {{action "cancel"}}>Cancel</button>
+    </div>
+  </div>
+</form>
