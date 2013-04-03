@@ -8,7 +8,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create([{ email: "bla@blubb.com", name: "Bla", password: "ohfoobar", password_confirmation: "ohfoobar" },
-                     { email: "blubb@bla.com", name: "Blubb", password: "ohfoobar", password_confirmation: "ohfoobar" }])
+                     { email: "blubb@bla.com", name: "Blubb", password: "ohfoobar", password_confirmation: "ohfoobar" },
+                     { email: "admin@bla.com", name: "Admin", password: "ohfoobar", password_confirmation: "ohfoobar" }])
+users[2].update_attribute(:role, "Admin")
 
 categories = Category.create([{ name: "Category 1" }, { name: "Category 2" }, { name: "Category 3" }])
 
