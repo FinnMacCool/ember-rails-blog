@@ -62,7 +62,7 @@ EmberBlog.PostEditController = Ember.ObjectController.extend({
 
     validatePresenceOf: function(attr) {
         var value = this.get('content.' + attr);
-        return !(value === undefined || value === '');
+        return !(value == undefined || value.trim() === '');
     },
 
     validateLengthOf: function(attr, min, max) {
