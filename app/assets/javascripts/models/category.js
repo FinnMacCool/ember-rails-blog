@@ -12,5 +12,5 @@ EmberBlog.Category = DS.Model.extend({
 
     postCount: function() {
         return this.get('posts.length')
-    }.property('posts')
+    }.property('posts.@each')
 });
