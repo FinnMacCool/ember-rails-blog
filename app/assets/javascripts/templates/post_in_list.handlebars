@@ -4,7 +4,10 @@
     {{#linkTo post post}}{{post.title}}{{/linkTo}}
   </div>
   <div class="post-info">
-    by {{post.user.name}} on {{post.formattedDate}} in {{post.category.name}}
+    by {{post.user.name}} on {{post.formattedDate}}
+    {{#if post.category}}
+      in {{post.category.name}}
+    {{/if}}
   </div>
 </div>
 <div class="post-body">
