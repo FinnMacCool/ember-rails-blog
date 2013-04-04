@@ -20,7 +20,9 @@
   {{ log this }}
   <ul class="unstyled">
     {{#each comment in comments}}
-      {{view EmberBlog.CommentInListView contentBinding="comment"}}
+      {{#if comment.approved}}
+        {{view EmberBlog.CommentInListView contentBinding="comment"}}
+      {{/if}}
     {{else}}
       Noch keine Kommentare
     {{/each}}
