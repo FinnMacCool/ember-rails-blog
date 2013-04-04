@@ -8,4 +8,11 @@
       {{comment.text}}
     </div>
   </li>
+  <li>
+    {{#if comment.approved}}
+      <button class="btn" {{action disapprove on="click"}}><i class="icon-thumbs-down"></i></button>
+    {{else}}
+      <button class="btn" {{action approve on="click"}}><i class="icon-thumbs-up"></i></button>
+    {{/if}}
+  </li>
 </ul>
