@@ -7,9 +7,7 @@ EmberBlog.PostIndexController = Ember.ObjectController.extend({
     this.transaction.add(content);
     if (window.confirm("Are you sure you want to delete this post?")) {
       content.deleteRecord();
-      Em.Logger.info(EmberBlog);
       content.one('didDelete', function() {
-        Em.Logger.info(EmberBlog);
         EmberBlog.Router.router.transitionTo('posts.index');
       });
       this.transaction.commit();
